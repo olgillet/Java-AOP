@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns:aop="http://www.springframework.org/schema/aop"
+xmlns:tx="http://www.springframework.org/schema/tx"
+xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:component-scan
+		base-package="com.spring.music"></context:component-scan>
+
+	<!-- without Constructor -->
+	<!-- <bean id="guitar" class="com.spring.music.Guitar" /> <bean id="guitarist" 
+		class="com.spring.music.Guitarist"> <property name="instrument" ref="guitar" 
+		/> </bean> -->
+
+	<!-- When we have a Constructor -->
+	<!-- <bean id="guitar" class="com.spring.music.Guitar" /> <bean id="guitarist" 
+		class="com.spring.music.Guitarist"> <constructor-arg index="0" value="John"/> 
+		<constructor-arg index="1" ref="guitar"/> </bean> -->
+
+
+	<!-- 
+	<bean id="myAspectInterceptor" class="com.spring.music.MyAspectInterceptor" />
+
+	<aop:config>
+		<aop:pointcut id="serviceToStringPointCut" expression="execution(* com.spring.music.Ukulele.toString(..))" />
+		
+		<aop:aspect id="myAspect" ref="myAspectInterceptor">
+			<aop:before method="interceptToString" pointcut-ref="serviceToStringPointCut" />
+		</aop:aspect>
+	</aop:config>
+	 -->
+
+</beans>
